@@ -83,8 +83,10 @@ The frontend calls the API at `http://127.0.0.1:8000`. If you change the backend
 4. Add a vehicle.
 5. Create a booking and choose either Doorstep or At our shop.
 
-## 5. Configure real business packages
-The starter seeds clearly-labelled sample packages. Update `DEFAULT_SERVICES` in `backend/app/main.py` with your actual service names, descriptions, prices and durations before publishing. Do not advertise placeholder prices.
+## 5. Washing package prices
+The API seeds the five approved vehicle-category prices (Bike / Scooter ₹149, Hatchback ₹299, Sedan ₹349, SUV / MUV ₹449, and Luxury / Large SUV ₹599) and a ₹99 doorstep convenience charge. Shop appointments have no additional charge. The landing page and booking estimate load these rates from `/api/pricing`.
+
+The backend looks up the vehicle's category and calculates every booking total; it does not accept a client-supplied price. Each booking stores the wash price, doorstep charge and total in paise so later price changes do not change booking history. Startup applies an additive migration for these snapshot columns, preserves existing records, and seeds only missing vehicle-price rows. Existing bookings with no recorded price remain marked as having no historical price.
 
 ## 6. Security notes
 - Passwords are hashed using Argon2.
@@ -98,6 +100,7 @@ The starter seeds clearly-labelled sample packages. Update `DEFAULT_SERVICES` in
 ## 7. Azure / Terraform
 The `infra/` folder contains a starter Terraform definition for an Azure Static Web App (frontend hosting). It does not yet provision a backend runtime or PostgreSQL database. Deploying the API and database is a separate step; do not assume the whole application is hosted just because the frontend is live.
 
+The GitHub Actions workflow in `.github/workflows/azure-static-web-apps.yml` deploys the static frontend from `frontend/` when changes are pushed to `main` and creates preview deployments for pull requests targeting `main`. Add the Static Web App deployment token to the repository's Actions secrets as `AZURE_STATIC_WEB_APPS_API_TOKEN`.
 
 ## REDDY AUTOCARE branded homepage
 The frontend now uses the supplied brand artwork and cropped showroom, uniform and mobile-van visuals in `frontend/assets/`. The public landing page includes service cards, doorstep/shop booking calls to action, and a registration/login modal connected to the FastAPI API.

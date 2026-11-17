@@ -1,0 +1,163 @@
+.pricing-section {
+  background: linear-gradient(160deg, #12120f, #090a09 72%);
+  border-block: 1px solid #493a20;
+}
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.price-card {
+  min-height: 184px;
+  padding: 24px;
+  border: 1px solid #59451f;
+  background: linear-gradient(145deg, #1a1914, #0d0f0e);
+  box-shadow: inset 0 1px 0 #ffffff08;
+}
+
+.price-card span,
+.mode-prices span {
+  display: block;
+  color: #b7a16f;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.price-card h3 {
+  margin: 20px 0 12px;
+  font: 600 21px 'Playfair Display', serif;
+}
+
+.price-card strong,
+.mode-prices b {
+  color: var(--gold2);
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.pricing-status {
+  min-height: 18px;
+  color: #e4c577;
+  font-size: 12px;
+}
+
+.mode-prices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  margin-top: 20px;
+  border: 1px solid #493a20;
+  background: #493a20;
+}
+
+.mode-prices > div {
+  display: grid;
+  gap: 11px;
+  padding: 20px 23px;
+  background: #121310;
+}
+
+.mode-prices b {
+  font-size: 15px;
+}
+
+.mode-prices b strong {
+  color: var(--gold2);
+}
+
+.booking-estimate {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+  padding: 16px;
+  border: 1px solid #59451f;
+  background: #0c0d0b;
+  color: #d7cbb2;
+  font-size: 12px;
+}
+
+.booking-estimate > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.booking-estimate b,
+.booking-amount {
+  color: var(--gold2);
+}
+
+.booking-estimate .estimate-total {
+  padding-top: 11px;
+  border-top: 1px solid #493a20;
+  color: #fff;
+  font-weight: 800;
+}
+
+.booking-estimate .estimate-total b {
+  font-size: 17px;
+}
+
+.category-update {
+  margin: 20px 0;
+  padding: 16px;
+  border: 1px solid #59451f;
+  background: #0c0d0b;
+}
+
+.category-update > p {
+  color: #d7cbb2;
+  font-size: 12px;
+}
+
+.booking-amount {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+}
+
+@media (min-width: 1000px) {
+  .price-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .price-card {
+    padding: 20px 16px;
+  }
+
+  .price-card h3 {
+    min-height: 48px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 650px) {
+  .price-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 25px;
+  }
+
+  .price-card {
+    min-height: 155px;
+    padding: 17px 14px;
+  }
+
+  .price-card h3 {
+    min-height: 42px;
+    margin: 17px 0 9px;
+    font-size: 17px;
+  }
+
+  .price-card strong {
+    font-size: 21px;
+  }
+
+  .mode-prices {
+    grid-template-columns: 1fr;
+  }
+}

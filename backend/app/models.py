@@ -32,6 +32,12 @@ class Service(Base):
     duration_minutes: Mapped[int] = mapped_column(Integer, default=60)
     active: Mapped[bool] = mapped_column(Boolean, default=True)
 
+class VehiclePrice(Base):
+    __tablename__ = "vehicle_prices"
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    vehicle_type: Mapped[str] = mapped_column(String(30), unique=True)
+    price_paise: Mapped[int] = mapped_column(Integer)
+
 class Booking(Base):
     __tablename__ = "bookings"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
@@ -39,6 +45,9 @@ class Booking(Base):
     vehicle_id: Mapped[int] = mapped_column(ForeignKey("vehicles.id"))
     service_id: Mapped[int] = mapped_column(ForeignKey("services.id"))
     service_mode: Mapped[str] = mapped_column(String(20))  # doorstep | shop
+    service_price_paise: Mapped[int] = mapped_column(Integer, default=0, server_default="0")
+    doorstep_charge_paise: Mapped[int] = mapped_column(Integer, default=0, server_default="0")
+    total_price_paise: Mapped[int] = mapped_column(Integer, default=0, server_default="0")
     location_text: Mapped[str] = mapped_column(String(300), default="")
     scheduled_at: Mapped[datetime] = mapped_column(DateTime)
     status: Mapped[str] = mapped_column(String(20), default="pending")

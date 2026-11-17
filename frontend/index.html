@@ -1,12 +1,107 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>REDDY AUTOCARE | Steam Car & Bike Wash</title><link rel="stylesheet" href="style.css"></head><body>
-<header><a class="logo" href="#"><b>💧 REDDY</b> AUTOCARE <small>STEAM CAR & BIKE WASH</small></a><nav><a href="#services">Services</a><a href="#doorstep">Doorstep wash</a><a href="#brand">Our brand</a></nav><button class="gold" id="open-login">CUSTOMER LOGIN</button></header>
-<section class="hero"><img src="assets/reddy-hero.jpg" alt="REDDY AUTOCARE brand artwork"><div class="shade"></div><div class="hero-copy"><label>PREMIUM AUTOMOBILE CARE · ANYTIME. ANYWHERE.</label><h1>We Clean.<br><em>You Shine.</em></h1><p>Premium steam care for your car and bike — at our facility or right at your doorstep.</p><button class="gold" id="hero-book">BOOK YOUR WASH ↗</button></div></section>
-<div class="promises"><span>✦ PREMIUM CARE</span><span>✦ WATER CONSCIOUS</span><span>✦ ECO MINDED</span><span>✦ FAST & PROFESSIONAL</span></div>
-<section class="section" id="services"><div class="heading"><label>WHAT WE DO</label><h2>Give your ride the <em>REDDY treatment.</em></h2><p>Choose the service that fits your ride.</p></div><div class="cards"><article style="background-image:linear-gradient(0deg,#050606,transparent 85%),url('assets/reddy-hero.jpg')"><label>01 / CAR CARE</label><h3>Car Steam Wash</h3><p>A fresh, clean finish for the vehicle you count on every day.</p><button class="link book">EXPLORE & BOOK ↗</button></article><article style="background-image:linear-gradient(0deg,#050606,transparent 85%),url('assets/reddy-hero.jpg');background-position: right"><label>02 / BIKE CARE</label><h3>Bike Steam Wash</h3><p>Thoughtful cleaning for your two-wheeler, down to the details.</p><button class="link book">EXPLORE & BOOK ↗</button></article><article style="background-image:linear-gradient(0deg,#050606,transparent 85%),url('assets/mobile-van.jpg')"><label>03 / ON THE MOVE</label><h3>Mobile Van Wash</h3><p>Premium vehicle care brought closer to your doorstep.</p><button class="link book">EXPLORE & BOOK ↗</button></article></div></section>
-<section class="doorstep" id="doorstep"><img src="assets/mobile-van.jpg" alt="REDDY AUTOCARE mobile van"><div><label>YOUR PLACE. YOUR TIME.</label><h2>Great car care<br><em>comes to you.</em></h2><p>Request a doorstep wash at your preferred location, or book an appointment at our shop. Manage your vehicles and appointments in one customer account.</p><ul><li>Doorstep service requests</li><li>Shop appointment bookings</li><li>Your vehicles and booking history</li></ul><button class="gold" id="doorstep-book">SCHEDULE A WASH ↗</button></div></section>
-<section class="section" id="brand"><div class="heading"><label>THE REDDY AUTOCARE EXPERIENCE</label><h2>One standard. <em>Everywhere.</em></h2><p>Our wash space, our team and our mobile service — one premium identity.</p></div><div class="gallery"><figure><img src="assets/showroom.jpg"><figcaption>OUR WASH SPACE</figcaption></figure><figure><img src="assets/uniform.jpg"><figcaption>OUR BRAND. OUR TEAM.</figcaption></figure><figure><img src="assets/mobile-van.jpg"><figcaption>CARE THAT COMES TO YOU</figcaption></figure></div></section>
-<section class="cta"><label>YOUR RIDE DESERVES THIS</label><h2>Ready to make it <em>shine?</em></h2><button class="gold" id="cta-book">BOOK YOUR WASH ↗</button></section><footer><b>REDDY AUTOCARE</b><span>WE CLEAN. YOU SHINE.</span><small>© 2026 REDDY AUTOCARE</small></footer>
-<div class="modal hidden" id="auth-modal"><div class="backdrop" id="close-bg"></div><div class="auth"><button class="close" id="close">×</button><h2>REDDY <em>AUTOCARE</em></h2><label class="sub">YOUR CUSTOMER PORTAL</label><div class="tabs"><button data-tab="login">LOGIN</button><button data-tab="register">CREATE ACCOUNT</button></div>
-<form id="login-form"><label>Mobile number</label><input id="login-phone" type="tel" placeholder="+91 9876543210" required><label>Password</label><input id="login-password" type="password" placeholder="Your password" required><button class="gold full">LOGIN TO YOUR ACCOUNT ↗</button><p id="login-message"></p><small>New customer? <button type="button" class="link" data-tab="register">Register here</button></small></form>
-<form id="register-form" class="hidden"><label>Full name</label><input id="reg-name" required minlength="2" placeholder="Your full name"><label>Mobile number</label><input id="reg-phone" type="tel" required placeholder="+91 9876543210"><label>Create password</label><input id="reg-password" type="password" required minlength="10" placeholder="At least 10 characters"><label>Confirm password</label><input id="reg-confirm" type="password" required minlength="10" placeholder="Re-enter password"><button class="gold full">CREATE MY ACCOUNT ↗</button><p id="register-message"></p><small>Already registered? <button type="button" class="link" data-tab="login">Login</button></small></form><small class="secure">Secure password hashing · Your account, your bookings</small></div></div>
-<section id="app-view" class="customer hidden"><div class="dashhead"><div><label>CUSTOMER PORTAL</label><h1>Welcome, <span id="customer-name"></span></h1></div><button id="logout-btn" class="gold">LOG OUT</button></div><div class="dashgrid"><article class="panel"><label>YOUR ACCOUNT</label><h2>Profile</h2><p id="profile-name"></p><p id="profile-phone"></p></article><article class="panel"><label>BOOK YOUR NEXT WASH</label><h2>Vehicle & appointment</h2><form id="vehicle-form"><h3>Add vehicle</h3><label>Vehicle type</label><select id="vehicle-type"><option>Car</option><option>SUV</option><option>Hatchback</option><option>Sedan</option><option>Bike</option><option>Other</option></select><label>Make / model</label><input id="vehicle-model" required><label>Registration number</label><input id="vehicle-reg" required><button class="gold">SAVE VEHICLE</button><p id="vehicle-message"></p></form><form id="booking-form"><h3>Book a wash</h3><label>Vehicle</label><select id="booking-vehicle" required></select><label>Service</label><select id="booking-service" required></select><label>Service type</label><select id="booking-mode"><option value="shop">At our shop</option><option value="doorstep">Doorstep service</option></select><label>Date & time</label><input id="booking-date" type="datetime-local" required><div id="address-wrap" class="hidden"><label>Doorstep address</label><textarea id="booking-address"></textarea></div><label>Notes</label><textarea id="booking-notes"></textarea><button class="gold">REQUEST BOOKING</button><p id="booking-message"></p></form></article></div><article class="panel"><label>YOUR ACTIVITY</label><h2>My bookings</h2><div id="booking-list"></div></article></section><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>REDDY AUTOCARE | Steam Car & Bike Wash</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pricing.css">
+</head>
+<body>
+  <header>
+    <a class="logo" href="#"><b>💧 REDDY</b> AUTOCARE <small>STEAM CAR & BIKE WASH</small></a>
+    <nav><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#doorstep">Doorstep wash</a><a href="#brand">Our brand</a></nav>
+    <button class="gold" id="open-login">CUSTOMER LOGIN</button>
+  </header>
+  <section class="hero">
+    <img src="assets/reddy-hero.jpg" alt="REDDY AUTOCARE brand artwork">
+    <div class="shade"></div>
+    <div class="hero-copy">
+      <label>PREMIUM AUTOMOBILE CARE · ANYTIME. ANYWHERE.</label>
+      <h1>We Clean.<br><em>You Shine.</em></h1>
+      <p>Premium steam care for your car and bike — at our facility or right at your doorstep.</p>
+      <button class="gold" id="hero-book">BOOK YOUR WASH ↗</button>
+    </div>
+  </section>
+  <div class="promises"><span>✦ PREMIUM CARE</span><span>✦ WATER CONSCIOUS</span><span>✦ ECO MINDED</span><span>✦ FAST & PROFESSIONAL</span></div>
+  <section class="section" id="services">
+    <div class="heading"><label>WHAT WE DO</label><h2>Give your ride the <em>REDDY treatment.</em></h2><p>Choose the service that fits your ride.</p></div>
+    <div class="cards">
+      <article style="background-image:linear-gradient(0deg,#050606,transparent 85%),url('assets/reddy-hero.jpg')"><label>01 / CAR CARE</label><h3>Car Steam Wash</h3><p>A fresh, clean finish for the vehicle you count on every day.</p><button class="link book">EXPLORE & BOOK ↗</button></article>
+      <article style="background-image:linear-gradient(0deg,#050606,transparent 85%),url('assets/reddy-hero.jpg');background-position:right"><label>02 / BIKE CARE</label><h3>Bike Steam Wash</h3><p>Thoughtful cleaning for your two-wheeler, down to the details.</p><button class="link book">EXPLORE & BOOK ↗</button></article>
+      <article style="background-image:linear-gradient(0deg,#050606,transparent 85%),url('assets/mobile-van.jpg')"><label>03 / ON THE MOVE</label><h3>Mobile Van Wash</h3><p>Premium vehicle care brought closer to your doorstep.</p><button class="link book">EXPLORE & BOOK ↗</button></article>
+    </div>
+  </section>
+  <section class="section pricing-section" id="pricing">
+    <div class="heading">
+      <label>STRAIGHTFORWARD, PREMIUM CARE</label>
+      <h2>Our Washing Packages <em>& Prices</em></h2>
+      <p>Choose your vehicle category. Your selected steam-wash service is included in the displayed package price.</p>
+    </div>
+    <div class="price-grid" id="public-prices" aria-live="polite">
+      <article class="price-card" data-price-card="Bike / Scooter"><span>TWO-WHEELER</span><h3>Bike / Scooter</h3><strong data-price-category="Bike / Scooter">Loading price…</strong></article>
+      <article class="price-card" data-price-card="Hatchback"><span>COMPACT CARE</span><h3>Hatchback</h3><strong data-price-category="Hatchback">Loading price…</strong></article>
+      <article class="price-card" data-price-card="Sedan"><span>REFINED CARE</span><h3>Sedan</h3><strong data-price-category="Sedan">Loading price…</strong></article>
+      <article class="price-card" data-price-card="SUV / MUV"><span>SPACIOUS CARE</span><h3>SUV / MUV</h3><strong data-price-category="SUV / MUV">Loading price…</strong></article>
+      <article class="price-card" data-price-card="Luxury / Large SUV"><span>SIGNATURE CARE</span><h3>Luxury / Large SUV</h3><strong data-price-category="Luxury / Large SUV">Loading price…</strong></article>
+    </div>
+    <p class="pricing-status" id="pricing-status" role="status"></p>
+    <div class="mode-prices">
+      <div><span>SHOP APPOINTMENT</span><b>No additional charge</b></div>
+      <div><span>DOORSTEP MOBILE-VAN SERVICE</span><b><strong data-doorstep-price>Loading…</strong> convenience charge per booking</b></div>
+    </div>
+  </section>
+  <section class="doorstep" id="doorstep">
+    <img src="assets/mobile-van.jpg" alt="REDDY AUTOCARE mobile van">
+    <div><label>YOUR PLACE. YOUR TIME.</label><h2>Great car care<br><em>comes to you.</em></h2><p>Request a doorstep wash at your preferred location, or book an appointment at our shop. Manage your vehicles and appointments in one customer account.</p><ul><li>Doorstep service requests</li><li>Shop appointment bookings</li><li>Your vehicles and booking history</li></ul><button class="gold" id="doorstep-book">SCHEDULE A WASH ↗</button></div>
+  </section>
+  <section class="section" id="brand">
+    <div class="heading"><label>THE REDDY AUTOCARE EXPERIENCE</label><h2>One standard. <em>Everywhere.</em></h2><p>Our wash space, our team and our mobile service — one premium identity.</p></div>
+    <div class="gallery"><figure><img src="assets/showroom.jpg" alt="Our wash space"><figcaption>OUR WASH SPACE</figcaption></figure><figure><img src="assets/uniform.jpg" alt="REDDY AUTOCARE team uniform"><figcaption>OUR BRAND. OUR TEAM.</figcaption></figure><figure><img src="assets/mobile-van.jpg" alt="REDDY AUTOCARE mobile van"><figcaption>CARE THAT COMES TO YOU</figcaption></figure></div>
+  </section>
+  <section class="cta"><label>YOUR RIDE DESERVES THIS</label><h2>Ready to make it <em>shine?</em></h2><button class="gold" id="cta-book">BOOK YOUR WASH ↗</button></section>
+  <footer><b>REDDY AUTOCARE</b><span>WE CLEAN. YOU SHINE.</span><small>© 2026 REDDY AUTOCARE</small></footer>
+  <div class="modal hidden" id="auth-modal">
+    <div class="backdrop" id="close-bg"></div>
+    <div class="auth">
+      <button class="close" id="close">×</button><h2>REDDY <em>AUTOCARE</em></h2><label class="sub">YOUR CUSTOMER PORTAL</label>
+      <div class="tabs"><button data-tab="login">LOGIN</button><button data-tab="register">CREATE ACCOUNT</button></div>
+      <form id="login-form"><label>Mobile number</label><input id="login-phone" type="tel" placeholder="+91 9876543210" required><label>Password</label><input id="login-password" type="password" placeholder="Your password" required><button class="gold full">LOGIN TO YOUR ACCOUNT ↗</button><p id="login-message"></p><small>New customer? <button type="button" class="link" data-tab="register">Register here</button></small></form>
+      <form id="register-form" class="hidden"><label>Full name</label><input id="reg-name" required minlength="2" placeholder="Your full name"><label>Mobile number</label><input id="reg-phone" type="tel" required placeholder="+91 9876543210"><label>Create password</label><input id="reg-password" type="password" required minlength="10" placeholder="At least 10 characters"><label>Confirm password</label><input id="reg-confirm" type="password" required minlength="10" placeholder="Re-enter password"><button class="gold full">CREATE MY ACCOUNT ↗</button><p id="register-message"></p><small>Already registered? <button type="button" class="link" data-tab="login">Login</button></small></form>
+      <small class="secure">Secure password hashing · Your account, your bookings</small>
+    </div>
+  </div>
+  <section id="app-view" class="customer hidden">
+    <div class="dashhead"><div><label>CUSTOMER PORTAL</label><h1>Welcome, <span id="customer-name"></span></h1></div><button id="logout-btn" class="gold">LOG OUT</button></div>
+    <div class="dashgrid">
+      <article class="panel"><label>YOUR ACCOUNT</label><h2>Profile</h2><p id="profile-name"></p><p id="profile-phone"></p></article>
+      <article class="panel">
+        <label>BOOK YOUR NEXT WASH</label><h2>Vehicle & appointment</h2>
+        <form id="vehicle-form">
+          <h3>Add vehicle</h3><label>Vehicle category</label>
+          <select id="vehicle-type" required><option value="">Choose a category</option><option>Bike / Scooter</option><option>Hatchback</option><option>Sedan</option><option>SUV / MUV</option><option>Luxury / Large SUV</option></select>
+          <label>Make / model</label><input id="vehicle-model" required><label>Registration number</label><input id="vehicle-reg" required><button class="gold">SAVE VEHICLE</button><p id="vehicle-message"></p>
+        </form>
+        <div id="category-update" class="category-update hidden">
+          <p>This saved vehicle needs a pricing category before it can be booked.</p>
+          <label for="category-update-select">Update vehicle category</label>
+          <select id="category-update-select"><option value="">Choose a category</option><option>Bike / Scooter</option><option>Hatchback</option><option>Sedan</option><option>SUV / MUV</option><option>Luxury / Large SUV</option></select>
+          <button type="button" class="gold" id="category-update-button">UPDATE VEHICLE</button><p id="category-update-message"></p>
+        </div>
+        <form id="booking-form">
+          <h3>Book a wash</h3><label>Vehicle</label><select id="booking-vehicle" required></select>
+          <label>Service</label><select id="booking-service" required></select>
+          <label>Service type</label><select id="booking-mode"><option value="shop">At our shop</option><option value="doorstep">Doorstep service</option></select>
+          <label>Date & time</label><input id="booking-date" type="datetime-local" required>
+          <div id="address-wrap" class="hidden"><label>Doorstep address</label><textarea id="booking-address"></textarea></div>
+          <label>Notes</label><textarea id="booking-notes"></textarea>
+          <div id="booking-estimate" class="booking-estimate" aria-live="polite">Select a vehicle to see the estimated price.</div>
+          <button class="gold">REQUEST BOOKING</button><p id="booking-message"></p>
+        </form>
+      </article>
+    </div>
+    <article class="panel"><label>YOUR ACTIVITY</label><h2>My bookings</h2><div id="booking-list"></div></article>
+  </section>
+  <script src="app.js"></script>
+</body>
+</html>

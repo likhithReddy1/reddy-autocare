@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Literal
 from pydantic import BaseModel, Field, ConfigDict
 
 class RegisterIn(BaseModel):
@@ -21,6 +22,15 @@ class VehicleIn(BaseModel):
     make_model: str = Field(min_length=2, max_length=100)
     registration_number: str = Field(min_length=4, max_length=20)
 
+class VehicleCategoryUpdate(BaseModel):
+    vehicle_type: Literal[
+        "Bike / Scooter",
+        "Hatchback",
+        "Sedan",
+        "SUV / MUV",
+        "Luxury / Large SUV",
+    ]
+
 class VehicleOut(VehicleIn):
     id: int
     model_config = ConfigDict(from_attributes=True)
@@ -38,6 +48,9 @@ class BookingOut(BaseModel):
     vehicle_id: int
     service_id: int
     service_mode: str
+    service_price_paise: int
+    doorstep_charge_paise: int
+    total_price_paise: int
     location_text: str
     scheduled_at: datetime
     status: str
